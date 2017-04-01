@@ -15,7 +15,11 @@ input:focus {
     <i class="fa fa-arrow-right" aria-hidden="true" id="add_project_next_2"></i></div> -->
 <div class="container" id="text_editor" style="display: none">
     <div class="row">
-    {{form_file_upload}}
+    <form action="." method="post" enctype="multipart/form-data"> 
+    {% csrf_token %}    
+    {{ form.as_p }}
+    <input type="submit" value = "Upload"/>
+</form>
         <div class="offset-md-2 col-md-8" d="controls">
             <button id="bold" type="button" class="btn toolbar_btn"> <i class="fa fa-bold"></i> </button>
             <button id="italic" type="button" class="btn toolbar_btn"> <i class="fa fa-italic"></i> </button>
@@ -52,9 +56,8 @@ input:focus {
                 <option value="6">48</option>
                 <option value="7">60</option>
             </select>
-        <iframe id="textEditor"></iframe>
+            <iframe id="textEditor"></iframe>
         </div>
-        
     </div>
 </div>
 <script type="text/javascript">
@@ -70,7 +73,7 @@ function show_add_project_block() {
     //blocks defined
     var block_title = '<div id="block_add_project_title" style="position: relative; font-size:3vw;text-align: center;top:21%;">        <p>Hi! {{user.first_name}}            <p style="font-size: 2vw;">Give a title to your project.</p>            <input type="text" id="project_title" placeholder="title" style="font-size: 2vw; text-align: center; background-color: transparent;border:0;border-bottom:1px solid;">            <br>            <br>                    ';
     var block_type = '<div id="block_add_project_type" style="position: relative; font-size:3vw;text-align: center;top:4vw;">        <p style="font-size: 2vw;">What type of project is it?</p>        <div class="container">            <div class="row">                <div class="add_project_next offset-md-2 col-md-2" data-project-type="Medical" style="width:200px;height:200px;background-color:#73bec8;text-align:center;"><i style="color:#fff; font-size:12vw" class="fa fa-stethoscope" aria-hidden="true"></i>                    <br>                    <p style="font-size:2vw;">Medical</p>                </div>                <div class="add_project_next col-md-2" data-project-type="Literature" style="width:200px;height:200px;background-color:#ffcc99;text-align:center;"><i style="color:#fff; font-size:12vw" class="fa fa-pencil" aria-hidden="true"></i>                    <br>                    <p style="font-size:2vw;">Literature</p>                </div>            </div>        </div> </div>';
-    var block_desc='aa';
+    var block_desc = 'aa';
     var block_tags = 'this is tags block<button type="button" id="add_project_done" class="btn btn-secondary">Done</button>';
 
     var add_project_block_check = localStorage.getItem("add_project_block_now");
@@ -82,13 +85,12 @@ function show_add_project_block() {
     var previous_button = '<i class="add_project_before fa fa-arrow-left" aria-hidden="true" class="add_project_next"></i>';
     var next_button = '<i class="add_project_next fa fa-arrow-right" aria-hidden="true" class="add_project_next"></i> </p>    </div>';
     var block_now = localStorage.getItem("add_project_block_now");
-    if (block_now==3){
+    if (block_now == 3) {
         $("#add_project_full").html($("#text_editor").html() + next_button);
+    } else {
+        $('#add_project_full').html(eval(index_to_add_project_block[block_now]) + next_button);
     }
-    else{
-        $('#add_project_full').html(eval(index_to_add_project_block[block_now]) + next_button);   
-    }
-    
+
     $('#add_project_full').append(previous_button);
 };
 show_add_project_block();
@@ -97,13 +99,11 @@ $(document).on('click', '.add_project_next', function() {
     if (b == 1) {
         //get project title
         localStorage.setItem("project_title", $('#project_title').val());
-    }
-    else if (b == 2) {
+    } else if (b == 2) {
         //get project type
         localStorage.setItem("project_type", $(this).attr('data-project-type'));
-    }
-    else if (b == 3){
-        project_desc  = $("#textEditor").contents().find("body").html();
+    } else if (b == 3) {
+        project_desc = $("#textEditor").contents().find("body").html();
         localStorage.setItem('project_desc', project_desc);
     }
     b++;

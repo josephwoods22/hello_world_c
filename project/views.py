@@ -7,14 +7,19 @@ from project.models import project
 from django.http import HttpResponse, JsonResponse, HttpResponseRedirect
 from django.template.defaultfilters import slugify
 # import project from models
-from .models import project
+from .models import project, file_modal_form
 
 
 @login_required(login_url='../../')
 def add_project_page(request):
+    if request.method == 'POST':
+        form = file_modal_form(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
     user_profile_link = user_details.objects.filter(
         user_id=request.user.id).values_list('profile_link')[0][0]
-    return render(request, 'project/add.html', {'profile_link': user_profile_link})
+    form = file_modal_form()
+    return render(request, 'project/add.html', {'profile_link': user_profile_link, 'form':form})
 
 
 @login_required(login_url='../../')
@@ -56,4 +61,4 @@ def show_project(request, requested_user, requested_profile_link):
             temp_dict['liked'] = 0
             return render(request, 'user_profile/project_page.html',  {'project': temp_dict})
         else:
-            return HttpResponse('No project')   
+            return HttpResponse('No project')
