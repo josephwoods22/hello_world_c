@@ -1,6 +1,4 @@
-{% load staticfiles %}
- <div class="container-fluid">
-{% load staticfiles %} {% include "sitewide/post_login_base.html" %}
+{% load staticfiles %} {% block body_content %}
 <style type="text/css">
 .feed_button {
     font-size: 2vw;
@@ -21,6 +19,7 @@
     color: blue;
 }
 </style>
+{% include "sitewide/post_login_base.html" %}
 <div class="container-fluid">
     <div class="row">
         <div class="col">
@@ -41,6 +40,8 @@
             </div>
         </div>
     </div>
+</div>
+</div>
 </div>
 <script type="text/javascript">
 token = '{{ csrf_token }}';
@@ -117,3 +118,4 @@ $(document).on('click', '.button_like', function() {
     }
 });
 </script>
+{% endblock body_content %}

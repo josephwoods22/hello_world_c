@@ -68,7 +68,7 @@
     </div>
 
 
-    <!--- Page Content ------->
+    <!--- Page Content -->
     <div id="page-content-wrapper" class="nav_bar">
         <nav id="postlogin_navbar" class="navbar navbar-toggleable-md navbar-light bg-faded profile-nav navbar-fixed-top">
             <!--      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -97,7 +97,7 @@
                         <!--                <button class="btn my-2 my-sm-0" onclick="window.location='../../project/add/';" type="submit">
                           <i class="fa fa-plus" aria-hidden="true"></i>
                           &nbsp; Add Project
-                        </button>   --->
+                        </button>   -->
                     </li>
                     <li class="nav-item nav-tab">
                         <a href="#" class="nav-link">
@@ -111,7 +111,7 @@
                     </li>
                     <li class="nav-item dropdown" id="user_dropdown">
                         <a class="nav-link dropdown-toggle" id="user_options_dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <img onclick="window.location='../../profile/{{profile_link}}';" src="{% static 'images/anonymous-male.png' %}" style="width: 2vw;border-radius: 2vw;display: inline;">
+                            <img onclick="window.location='../../../profile/{{profile_link}}';" src="{% static 'images/anonymous-male.png' %}" style="width: 2vw;border-radius: 2vw;display: inline;">
                             <!--                    <a  style="display: inline;" id="user_options_dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> -->
                             {{user.first_name}}
                         </a>
@@ -128,14 +128,3 @@
                 </ul>
             </div>
         </nav>
-
-        <div class="container-fluid">
-            <div class="row">
-              {% block body_content %}
-
-              {% endblock body_content %}
-            </div>
-        </div>
-    </div>
-
-</div>

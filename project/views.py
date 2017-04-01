@@ -12,7 +12,9 @@ from .models import project
 
 @login_required(login_url='../../')
 def add_project_page(request):
-    return render(request, 'project/add.html', {'form_file_upload':form_file_upload})
+    user_profile_link = user_details.objects.filter(
+        user_id=request.user.id).values_list('profile_link')[0][0]
+    return render(request, 'project/add.html', {'profile_link': user_profile_link})
 
 
 @login_required(login_url='../../')
