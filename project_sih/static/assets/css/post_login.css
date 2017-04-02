@@ -58,7 +58,7 @@
     height: 0px !important;
     transition: .5s ease;
     position: relative;
-//    margin-left: 3rem;
+    //    margin-left: 3rem;
 }
 
 .hamburger:focus {
@@ -108,7 +108,7 @@
 }
 
 #navbarSupportedContent {
-  width: 100%;
+    width: 100%;
 }
 
 #navbarSupportedContent li {
@@ -412,13 +412,13 @@
         margin-left: 3rem;
     }
     #user_home_search {
-      width: 10px;
+        width: 10px;
     }
     #navbarSupportedContent {
-      display: none;
+        display: none;
     }
     #search_btn {
-      display: inline-block;
+        display: inline-block;
     }
 }
 
@@ -573,4 +573,265 @@
 
 .recent_news_feed {
     //    border: 2px solid #333;
+}
+
+
+/*----------------------------------------------------------------------------*/
+
+
+/*----------------------------------------------------------------------------*/
+
+
+/*-------------------------RICH TEXT EDITOR CSS-------------------------------*/
+
+
+/*----------------------------------------------------------------------------*/
+
+
+/*----------------------------------------------------------------------------*/
+
+#controls {
+    color: #222222;
+    background: #ffffff;
+    box-shadow: 0 16px 20px rgba(0, 0, 0, 0.12), 0 1px 20px 2px rgba(0, 0, 0, 0.16);
+    border-top: 6px solid #f02541;
+    width: 930px;
+}
+
+.toolbar_btn {
+    background: transparent;
+    color: #222222;
+    -moz-outline: 0;
+    outline: 0;
+    border: 0;
+    line-height: 1;
+    cursor: pointer;
+    text-align: left;
+    margin: 0px 2px;
+    -webkit-transition: background 0.2s ease 0s;
+    -moz-transition: background 0.2s ease 0s;
+    -ms-transition: background 0.2s ease 0s;
+    -o-transition: background 0.2s ease 0s;
+    width: 38px;
+    height: 38px;
+}
+
+#fonts.form-control {
+    margin-left: 7rem;
+    width: 100px !important;
+    display: inline-block;
+}
+
+option {
+    display: block;
+    background-color: transparent;
+    color: #222222;
+    -moz-outline: 0;
+    outline: 0;
+    border: 0;
+    line-height: 1;
+    cursor: pointer;
+    text-align: left;
+    margin: 0px 2px;
+}
+
+.selected {
+    background: transparent;
+    color: #222222;
+    -moz-outline: 0;
+    outline: 0;
+    border: 0;
+    line-height: 1;
+    cursor: pointer;
+    text-align: left;
+    margin: 0px 2px;
+    width: 38px;
+    height: 38px;
+}
+
+#fontSize.form-control {
+    margin-left: 1rem;
+    width: 140px !important;
+    display: inline-block;
+}
+
+.toolbar_separator {
+    height: 34px;
+    width: 1px;
+    margin: 2px;
+    background: #ebebeb;
+    display: inline-block;
+    vertical-align: top;
+}
+
+#textEditor {
+    display: block;
+    width: 930px;
+    height: 380px;
+    border: 2px solid #f3f3f3;
+    border-radius: 0px;
+    overflow: auto;
+    margin-left: -15px;
+    background-color: #fff;
+}
+
+#add_project_full h2 {
+  text-align: center;
+  color: #fff;
+  font-size: 2.5rem;
+  padding: 1rem;
+}
+
+
+/* ----------------- Cards add project   --------------------- */
+
+.back {
+    background: linear-gradient(141deg, #34485c 0, #000C40 100%);
+    padding: 20rem;
+}
+
+#block_add_project_title {
+    margin: 0 auto;
+    color: #fff;
+    font-size: 2rem !important;
+    transition: 0.3s ease;
+    text-align: center;
+    padding: 0px;
+    width: 30rem;
+    background-color: #eee;
+    box-shadow: 0 30px 85px 0 rgba(0, 0, 0, 0.2), 0 27px 40px 0 rgba(0, 0, 0, 0.19);
+    top: -10rem !important;
+}
+
+#user_name {
+    color: #f02541;
+    //  border: 2px solid #f02541;
+}
+
+.arrows {
+    padding: 3px;
+    color: #eee;
+}
+
+.fa-arrow-left {
+    font-size: 4rem !important;
+}
+
+.fa-arrow-right {
+    font-size: 4rem !important;
+}
+
+
+/*--------Project Types ----------*/
+
+#project_types {
+    margin: 0px 35px !important;
+}
+
+#icon_size {
+    width: 180px !important;
+    height: 180px !important;
+    margin: 30px !important;
+    box-shadow: 0 30px 85px 0 rgba(0, 0, 0, 0.2), 0 27px 40px 0 rgba(0, 0, 0, 0.19);
+}
+
+.add_project_next {
+    margin: 30px !important;
+}
+
+
+/*------------Project Type Tile--------------*/
+
+.project_type_tile {
+    background-color: rgba(0, 0, 0, 0.1);
+    color: #fff;
+}
+
+#add_project_full {
+    background: url('../images/project_type.jpg');
+}
+
+#project_types {
+    margin: 0px 35px !important;
+}
+
+#icon_size {
+    width: 180px !important;
+    height: 180px !important;
+    margin: 30px !important;
+    text-align: center;
+    box-shadow: 0 30px 85px 0 rgba(0, 0, 0, 0.2), 0 27px 40px 0 rgba(0, 0, 0, 0.19);
+    background-color: #73bec8;
+    text-align: center;
+    text-decoration: none;
+    color: #fff;
+}
+
+#project_types #icon_size:hover {
+    cursor: pointer;
+    background-color: #f02541;
+}
+
+.add_project_next {
+    margin: 30px !important;
+}
+
+#project_type_icon {
+    color: #fff;
+    font-size: 6vw;
+    padding-top: 3rem
+}
+
+
+/*------------------USER FEED----------------------------*/
+
+#user_feed {
+    margin: 0 auto !important;
+}
+
+.feed_project {
+    border-right: 1px solid #eee;
+}
+
+.feed_project:hover {
+    background-color: #eee;
+}
+
+.feed_content ul {
+    padding: 2rem;
+}
+
+.feed_content ul li {
+    color: #464a4c;
+}
+
+#start_project_card {
+    top: 45px;
+}
+
+#start_project_btn {
+    background-color: #f02541;
+    color: #fff;
+}
+
+
+/*-------------UPLOAD FILE FORM -------------------------------*/
+
+#upload_form {
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+#upload_form p {
+    color: #fff;
+}
+
+#upload_form input {
+    color: #fff;
+    font-weight: bold;
+    padding: 1rem;
+    width: 10rem;
+    margin-left: 4rem;
+    border: none;
+    background-color: #d9534f;
 }

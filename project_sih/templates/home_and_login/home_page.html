@@ -21,31 +21,9 @@
             </ul>
         </div>
     </nav> -->
-    <nav class="navbar navbar-toggleable-md navbar-light bg-faded">
-        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <a class="navbar-brand" href="#">Website Name</a>
-        <div id="navbarNavDropdown" class="navbar-collapse collapse">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
-                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="../../project/view">View Projects</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Pricing</a>
-                </li>
-            </ul>
-            <ul class="navbar-nav">
-                <li class="nav-item"><a href="#" data-toggle="modal" data-target="#loginModal" class="nav-link">LOGIN</a>
-                </li>
-                <li class="nav-item"><a href="#" data-toggle="modal" data-target="#signupModal" class="nav-link">SIGNUP</a>
-                </li>
-            </ul>
-        </div>
-    </nav>
+
+
+
 </section>
 <div id="loginModal" class="modal fade" role="dialog">
     <div class="modal-dialog">
@@ -147,14 +125,51 @@
         </div>
     </div>
 </section>
-<section class="heading">
+<section class="heading ">
+    <nav class="navbar navbar-toggleable-md navbar-light" id="homepage_navbar">
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+      </button>
+
+        <div id="navbarNavDropdown" class="navbar-collapse collapse">
+            <ul class="navbar-nav nav_tab">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                </li>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Getting Started</a>
+                </li>
+                <li>
+                    <a class="navbar-brand" href="#">Colossus</a></a>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Features</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">View Projects</a>
+                    </li>
+            </ul>
+            <ul class="navbar-nav register_btn">
+                <li class="nav-item"><a href="#" data-toggle="modal" data-target="#loginModal" class="nav-link">LOGIN</a>
+                </li>
+                <li class="nav-item"><a href="#" data-toggle="modal" data-target="#signupModal" class="nav-link">SIGNUP</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
     <div class="text-center">
         <div class="row">
             <div class="container col-md-12 content-centered">
-                <h1>Projects</h1>
-                <p class="tagline">A JavaScript toolkit that saves you time and scales with your development process. Provides everything you need to build a Web app. Language utilities, UI components, and more, all in one place, designed to work together perfectly.</p>
+                <h1>Collaborate. Work.</h1>
+                <h5> >>> from projects import antigravity</h5>
+                <p class="tagline">
+                  Knowledge Platform for sharing projects works taken up by the students in technical/higher educational institutes throughout the country.
+                </p>
+                <blockquote>
+
+                </blockquote>
                 <a href="#">
-                    <button type="button" class="btn btn-secondary heading-button">JOIN</button>
+                    <button type="button" class="btn btn-secondary heading-button">Got a Project ? Let's Collaborate</button>
                 </a>
             </div>
         </div>
@@ -192,25 +207,23 @@
                 <i class="material-icons icon"></i>
             </a>
             <h4 class="use-heading">
-
-                      <a href="#" class="use-heading-link">Reference Guide</a>
-
-                    </h4></div>
+                <a href="#" class="use-heading-link">Tutorials</a>
+            </h4>
+        </div>
         <div class="icon-block col-sm">
             <a href="#">
                 <i class="material-icons icon"></i>
             </a>
             <h4 class="use-heading">
-
-                      <a href="#" class="use-heading-link">Reference Guide</a>
-
-                    </h4></div>
+              <a href="#" class="use-heading-link">Reference Guide</a>
+            </h4>
+        </div>
     </div>
 </div>
 <section class="site-carousel">
     <div class="row">
         <div class="container">
-            <h2 class="text-center">What our customers say</h2>
+            <h2 class="text-center">Innovate, Collaborate, Triumph</h2>
             <div id="Carousel" class="carousel slide text-center" data-ride="carousel">
                 <!-- Indicators -->
                 <ol class="carousel-indicators">
@@ -221,10 +234,10 @@
                 <!-- Wrapper for slides -->
                 <div class="carousel-inner" role="listbox">
                     <div class="item active carousel-item">
-                        <h4>"This company is the best. I am so happy with the result!"<br /><span style="font-style: normal;">Michael Roe, Vice President, Comment Box</span></h4>
+                        <h4>"Go for it. No matter how it ends, it was an experience."<br /><span style="font-style: normal;">Michael Roe, Vice President, Comment Box</span></h4>
                     </div>
                     <div class="item carousel-item">
-                        <h4>"One word... WOW!!"<br /><span style="font-style: normal;">John Doe, Salesman, Rep Inc</span></h4>
+                        <h4>"The people who are crazy enough to think, <br /> they can change the world are the ones who do."<br /><span style="font-style: normal;">John Doe, Salesman, Rep Inc</span></h4>
                     </div>
                     <div class="item carousel-item">
                         <h4>"Could I... BE any more happy with this company?"<br /><span style="font-style: normal;">Chandler Bing, Actor, FriendsAlot</span></h4>
@@ -243,15 +256,41 @@
         </div>
     </div>
 </section>
+<section class="getting_started"  style="background-color:#fff;padding:3rem;">
+  <div class="row">
+    <div class="container">
+      <div class="text-center">
+        <h1 style="color: #f02451;padding-bottom:2rem;">GETTING STARTED</h1>
+      </div>
+      <div class="col text-center" id="">
+        <h4>ADD PROJECT</h4>
+        <p>
+          Our Platform provides the ability to add project works of wide range ( Almost all ) of course.
+          <br>
+          We too give the facility of adding projects to our platform.
+          <br>
+          To add project on Colossus , you need to click on Add Project button after signing up/login.
+        </p>
+      </div>
+      <div class="col">
+        <div class="container col-md-12 col-lg-12 text-center">
+            <a href="#">
+                <button type="button" class="btn btn-secondary join-button">MORE...</button>
+            </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 <section class="join">
-    <div class="text-center">
+    <div class="container-fluid text-center" style="background-color:#eee;padding:3rem;">
         <div class="row">
             <div class="container col-md-12 col-lg-12 content-centered">
                 <a href="#">
                     <button type="button" class="btn btn-secondary join-button">Become a Contributor</button>
                 </a>
             </div>
-            <div class="social-login">
+            <div class="social-login text-center " style="margin: 0 auto;">
                 <a class="btn btn-social-icon " href="#">
                     <span class="fa fa-github"></span>
                 </a>
@@ -277,7 +316,7 @@
     </footer>
 </section>
 <script type="text/javascript">
-token = '{{ csrf_token }}';
+    token = '{{ csrf_token }}';
 </script>
 <script src="{% static 'assets/javascripts/home.js' %}"></script>
 </script>

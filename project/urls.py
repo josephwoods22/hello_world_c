@@ -5,7 +5,6 @@ urlpatterns = [
     url(r'^add/$', views.add_project_page),
     url(r'^add_final/$', views.add_project),
     url(r'^project/$', views.add_project),
-    url(r'^search/$', views.search_db),
     url(r'^start/$', views.start_new),
     url(r'^view/$', views.view_project),
     url(r'^generate_stream_projects/$', views.generate_stream_projects),
