@@ -35,7 +35,7 @@
                 <div class="card-block">
                     <h5 class="card-title">Confused in starting a project?</h5>
                     <p class="card-text">Post a message to the community and have people from all over the world to work with you.</p>
-                    <a href="#" class="btn btn-primary">Start a project</a>
+                    <a href="../../project/start" class="btn btn-primary">Start a project</a>
                 </div>
             </div>
         </div>
@@ -45,6 +45,27 @@
 </div>
 <script type="text/javascript">
 token = '{{ csrf_token }}';
+// $("#user_home_search").keypress(function(e) {
+//     e.preventDea
+//     console.log("pressed");
+//     if (e.keyCode == 32) {
+//         query = $('#user_home_search').val();
+//         $.ajax({
+//             url: '../../project/search/',
+//             type: 'POST',
+//             data: {
+//                 'query': query
+//             },
+//             processData: false,
+//             contentType: false,
+//             success: function(data) {
+//                 print(data)
+//             }
+//         });
+//     }
+
+
+// });
 $(document).ready(function() {
     $.ajax({
         url: '../../profile/create_feed/',

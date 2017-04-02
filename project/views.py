@@ -1,9 +1,12 @@
 from django.shortcuts import render
+from django.db.models import Max
 from django.contrib.auth.decorators import login_required
 from django.views.decorators.csrf import csrf_exempt
+from django.contrib.postgres.search import SearchVector
 from django.contrib.auth.models import User
+from django.contrib import messages
 from home_and_login.models import user_details
-from project.models import project
+from project.models import project, file_model
 from django.http import HttpResponse, JsonResponse, HttpResponseRedirect
 from django.template.defaultfilters import slugify
 # import project from models
@@ -16,6 +19,11 @@ def add_project_page(request):
         form = file_modal_form(request.POST, request.FILES)
         if form.is_valid():
             form.save()
+            args = file_model.objects.all().aggregate(Max('id'))
+            file_link = file_model.objects.filter(id=args['id__max']).values_list('file_project_link' ,flat=True)
+            return HttpResponse(file_link)
+        else:
+            print('NO')
     user_profile_link = user_details.objects.filter(
         user_id=request.user.id).values_list('profile_link')[0][0]
     form = file_modal_form()
@@ -62,3 +70,35 @@ def show_project(request, requested_user, requested_profile_link):
             return render(request, 'user_profile/project_page.html',  {'project': temp_dict})
         else:
             return HttpResponse('No project')
+
+def start_new(request):
+    return render(request, 'project/start_new.html')
+
+def view_project(request):
+    return render(request, 'project/view.html')
+
+def view_project_stream(request, requested_stream):
+    print ("this" + requested_stream)
+    
+    return render(request, 'project/stream_view.html', {'stream' : requested_stream,})
+
+def generate_stream_projects(request):
+    feed_posts = {}
+    # all_projects = project.objects.filter(project_type=requested_stream).values_list('title', 'description', 'likes_total')
+    from project.models import project
+    user_project_list = project.objects.filter(project_type=request.POST['stream'])
+    for project_one in user_project_list:
+        temp_dict = {}
+        temp_dict['likes_total'] = project_one.likes_total
+        temp_dict['title'] = project_one.title
+        temp_dict['comments_total'] = project_one.comments_total
+        temp_dict['shares_total'] = project_one.shares_total
+        temp_dict['description'] = project_one.description
+        temp_dict['project_id'] = project_one.id
+        one = user_details.objects.filter(user_id=project_one.user_id).values_list(
+            'full_name', 'profile_link', 'photo_link')
+        temp_dict['full_name'] = one[0][0]
+        temp_dict['profile_link'] = one[0][1]
+        temp_dict['photo_link'] = one[0][2]
+        feed_posts['post: ' + str(project_one.id)] = temp_dict
+    return JsonResponse(feed_posts)

@@ -25,11 +25,11 @@ class project(models.Model):
     description = models.TextField()
     #add achievements
 
-class file_modal(models.Model):
-    file_name = models.CharField(max_length=20, null=True)
-    file_project = models.FileField(upload_to='project_data', default=True)
+class file_model(models.Model):
+    # file_name = models.CharField(max_length=20, null=True)
+    file_project_link = models.FileField(upload_to='project_sih/static/user_media', default=True)
 
 class file_modal_form(ModelForm):
     class Meta:
-        model = file_modal
+        model = file_model
         fields = '__all__'

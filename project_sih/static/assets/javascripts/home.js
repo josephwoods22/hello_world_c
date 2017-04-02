@@ -59,8 +59,9 @@ $(document).on('submit', '#form_login', function() {
 var space_number=0;
 var enter_number=0;
 document.body.onkeyup = function(e) {
+    e.preventDefault();
     if (e.keyCode == 32) {
-        e.preventDefault();
+        
         if (space_number==0){
             var to_speak = new SpeechSynthesisUtterance('Hello there! Welcome to the website. Press SpaceBar again for instructions.');    
             space_number+=1;
