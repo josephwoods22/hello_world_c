@@ -212,11 +212,8 @@ $(document).on('submit', '#lala', function(e) {
             data = data.substring(data.indexOf("/") + 1);
             project_desc = $("#textEditor").contents().find("body").append('<img src="../../'+data+'">');
         }
-
-        b++;
-        localStorage.setItem("add_project_block_now", b);
-        show_add_project_block();
     })
+})
     $(document).on('click', '.add_project_before', function() {
         var b = parseInt(localStorage.getItem("add_project_block_now"));
         b--;
