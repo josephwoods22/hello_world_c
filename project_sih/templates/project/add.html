@@ -13,8 +13,11 @@ input:focus {
         <br><p>Medical</p>
     </div>
     <i class="fa fa-arrow-right" aria-hidden="true" id="add_project_next_2"></i></div> -->
+
 <div class="container" id="text_editor" style="display: none;background-color: #fff;">
+  <h2>Description</h2>
     <div class="row">
+
         <form action="." method="post" enctype="multipart/form-data" id="lala">
             {% csrf_token %} {{ form.as_p }}
             <input type="submit" value="Upload" />
@@ -58,6 +61,10 @@ input:focus {
             </select>
             <iframe id="textEditor"></iframe>
         </div>
+        <form action="." method="post" enctype="multipart/form-data" id="upload_form">
+            {% csrf_token %} {{ form.as_p }}
+            <input type="submit" value="Upload" />
+        </form>
     </div>
 </div>
 <div class="container" id="project_type_tile" style="display: none">
@@ -66,43 +73,37 @@ input:focus {
         <div class="container " style="padding-left:8rem">
             <div id="project_types" class="row">
                 <div class="add_project_next offset-md-2 col-md-2" id="icon_size" data-project-type="Medical">
-                    <i id="project_type_icon" class="fa fa-stethoscope" aria-hidden="true"></i>
-                    <br>
+
+                    <i id="project_type_icon" class="fa fa-stethoscope" aria-hidden="true"></i> <br>
                     <p style="font-size:1.5vw;">Medical</p>
                 </div>
                 <div class="add_project_next col-md-2" id="icon_size" id="icon_size" data-project-type="Literature">
-                    <i id="project_type_icon" class="fa fa-cogs" aria-hidden="true"></i>
-                    <br>
+                    <i id="project_type_icon" class="fa fa-cogs" aria-hidden="true"></i> <br>
                     <p style="font-size:1.5vw;">Engineering</p>
                 </div>
                 <div class="add_project_next col-md-2" id="icon_size" id="icon_size" data-project-type="Literature">
-                    <i id="project_type_icon" class="fa fa-pencil" aria-hidden="true"></i>
-                    <br>
+                    <i id="project_type_icon" class="fa fa-pencil" aria-hidden="true"></i> <br>
                     <p style="font-size:1.5vw;">Literature</p>
                 </div>
                 <div class="add_project_next col-md-2" id="icon_size" id="icon_size" data-project-type="Literature">
-                    <i id="project_type_icon" class="fa fa-map-pin" aria-hidden="true"></i>
-                    <br>
+                    <i id="project_type_icon" class="fa fa-map-pin" aria-hidden="true"></i> <br>
                     <p style="font-size:1.5vw;">Mass Media</p>
                 </div>
                 <div class="add_project_next col-md-2" id="icon_size" id="icon_size" data-project-type="Literature">
-                    <i id="project_type_icon" class="fa fa-pencil-square-o" aria-hidden="true"></i>
-                    <br>
+                    <i id="project_type_icon" class="fa fa-pencil-square-o" aria-hidden="true"></i> <br>
                     <p style="font-size:1.5vw;">Architecture</p>
                 </div>
                 <div class="add_project_next col-md-2" id="icon_size" id="icon_size" data-project-type="Literature">
-                    <i id="project_type_icon" class="fa fa-users" aria-hidden="true"></i>
-                    <br>
+                    <i id="project_type_icon" class="fa fa-users" aria-hidden="true"></i> <br>
                     <p style="font-size:1.5vw;">Humanities</p>
                 </div>
                 <div class="add_project_next col-md-2" id="icon_size" id="icon_size" data-project-type="Literature">
-                    <i id="project_type_icon" class="fa fa-language" aria-hidden="true"></i>
-                    <br>
+                    <i id="project_type_icon" class="fa fa-language" aria-hidden="true"></i> <br>
                     <p style="font-size:1.5vw;">Journalism</p>
                 </div>
                 <div class="add_project_next col-md-2" id="icon_size" id="icon_size" data-project-type="Literature">
-                    <i id="project_type_icon" class="fa fa-television" aria-hidden="true"></i>
-                    <br>
+                    <i id="project_type_icon" class="fa fa-television" aria-hidden="true"></i> <br>
+
                     <p style="font-size:1.5vw;">Technology</p>
                 </div>
             </div>
@@ -118,33 +119,35 @@ var index_to_add_project_block = {
     4: 'block_tags'
 };
 
-function show_add_project_block() {
-    //blocks defined
-    var block_title =
-        '<div class="container-fluid back">        <div class="row">            <div id="block_add_project_title" class="card">                <div id="user_name" class="card-header">                    Hi! Puneet                </div>                <div class="card-block">                    <blockquote class="card-blockquote">                        <p style="color: #333">Give a title to your project.</p>                        <input type="text" id="project_title" placeholder="title" style="font-size: 2vw; text-align: center; background-color: transparent;border:0;border-bottom:1px solid;">                    </blockquote>                </div>            </div>          <div class="" style="text-align:center">                <div class="arrows">                    <i class="fa fa-arrow-left add_project_before"></i>                      <span style="padding-left:3rem;"></span>                    <i class="fa fa-arrow-right add_project_next"></i>                </div>            </div>        </div>    </div>';
-    var block_type = 'bb';
-    var block_desc = 'aa';
-    var block_tags = 'this is tags block<button type="button" id="add_project_done" class="btn btn-secondary">Done</button>';
 
-    var add_project_block_check = localStorage.getItem("add_project_block_now");
-    if (add_project_block_check === null) {
-        localStorage.setItem("add_project_block_now", 1);
-    } else {
-        var block_now = add_project_block_check;
-    }
-    var previous_button = '<i class="add_project_before fa fa-arrow-left" aria-hidden="true" class="add_project_next"></i>';
-    var next_button = '<i class="add_project_next fa fa-arrow-right" aria-hidden="true" class="add_project_next"></i> </p>';
-    var block_now = localStorage.getItem("add_project_block_now");
-    if (block_now == 2) {
-        $("#add_project_full").html($("#project_type_tile").html() + next_button);
-    } else if (block_now == 3) {
-        $("#add_project_full").html($("#text_editor").html() + next_button);
-    } else {
-        $('#add_project_full').html(eval(index_to_add_project_block[block_now]) + next_button);
-    }
-}
+    function show_add_project_block() {
+        //blocks defined
+        var block_title =
+            '<div class="container-fluid back">        <div class="row">            <div id="block_add_project_title" class="card">                <div id="user_name" class="card-header">                    Hi! {{user.first_name}}              </div>                <div class="card-block">                    <blockquote class="card-blockquote">                        <p style="color: #333">Give a title to your project.</p>                        <input type="text" id="project_title" placeholder="title" style="font-size: 2vw; text-align: center; background-color: transparent;border:0;border-bottom:1px solid;">                    </blockquote>                </div>            </div>          <div class="" style="text-align:center">                <div class="arrows">                    <i class="fa fa-arrow-left add_project_before"></i>                      <span style="padding-left:3rem;"></span>                    <i class="fa fa-arrow-right add_project_next"></i>                </div>            </div>        </div>    </div>';
+        var block_type = 'bb';
+        var block_desc = 'aa';
+        var block_tags = 'this is tags block<button type="button" id="add_project_done" class="btn btn-secondary">Done</button>';
 
-<!-- $('#add_project_full').append(previous_button); -->
+        var add_project_block_check = localStorage.getItem("add_project_block_now");
+        if (add_project_block_check === null) {
+            localStorage.setItem("add_project_block_now", 1);
+        } else {
+            var block_now = add_project_block_check;
+        }
+        var previous_button = '<i class="add_project_before fa fa-arrow-left" aria-hidden="true" class="add_project_next"></i>';
+        var next_button = '<i class="add_project_next fa fa-arrow-right" aria-hidden="true" class="add_project_next"></i> </p>';
+        var block_now = localStorage.getItem("add_project_block_now");
+        if (block_now == 2) {
+            $("#add_project_full").html($("#project_type_tile").html() + next_button);
+        } else if (block_now == 3) {
+            $("#add_project_full").html($("#text_editor").html() + next_button);
+        } else {
+            $('#add_project_full').html(eval(index_to_add_project_block[block_now]) + next_button);
+        }
+    }
+
+    <!-- $('#add_project_full').append(previous_button); -->
+
 
 
 show_add_project_block();
@@ -209,8 +212,39 @@ $(document).on('submit', '#lala', function(e) {
             data = data.substring(data.indexOf("/") + 1);
             project_desc = $("#textEditor").contents().find("body").append('<img src="../../'+data+'">');
         }
-    });
-})
+
+        b++;
+        localStorage.setItem("add_project_block_now", b);
+        show_add_project_block();
+    })
+    $(document).on('click', '.add_project_before', function() {
+        var b = parseInt(localStorage.getItem("add_project_block_now"));
+        b--;
+        localStorage.setItem("add_project_block_now", b);
+        show_add_project_block();
+    })
+    $(document).on('click', '#add_project_done', function() {
+        var project_title = localStorage.getItem('project_title');
+        var project_type = localStorage.getItem('project_type');
+        var fd = new FormData();
+        fd.append('csrfmiddlewaretoken', token);
+        fd.append('project_title', project_title);
+        fd.append('project_type', project_type);
+        fd.append('project_desc', project_desc);
+        $.ajax({
+            url: '../../project/add_final/',
+            type: 'POST',
+            data: fd,
+            processData: false,
+            contentType: false,
+            success: function(data) {
+                console.log("Done");
+                console.log(data);
+                localStorage.removeItem("add_project_block_now");
+                window.location='../../../../';
+            }
+        });
+    })
 </script>
 <script src="{% static '/assets/javascripts/editor.js' %}"></script>
 {% endblock body_content %}

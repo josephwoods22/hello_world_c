@@ -14,6 +14,7 @@
 .feed_user_activity {
     display: inline;
 }
+
 </style>
 <div class="container-fluid" style="margin-top: 2vh;">
     <div class="row">
@@ -57,7 +58,7 @@
                 {% else %}
                 You'll have to login to send a message
                 {%endif%}
-                
+
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -66,7 +67,7 @@
         </div>
     </div>
 </div>
-    
+
 <script type="text/javascript">
 token = '{{ csrf_token }}';
 $(document).ready(function() {
@@ -99,7 +100,7 @@ $(document).ready(function() {
                     var bool_liked = 'unliked';
                 }
                 var project_all =
-                    '<div class="feed_project">                <hr>                <div class="feed_project_owner_meta"> <img class="feed_user_picture" src = ' + data[feed_element]['photo_link'] + '>                    <p class="feed_user_activity" > ' + data[feed_element]['full_name'] + ' added this | Mar 18</p>                </div>                <h4 class="feed_heading">' + data[feed_element]['title'] + '</h4>                <div class="feed_content">                    <p class="feed_compressed_desc">' + data[feed_element]['description'] + '                    </p>                    <div class="feed_buttons">                        <i class="fa fa-thumbs-up feed_button" aria-hidden="true">' + data[feed_element]['likes_total'] + '</i>                        <i class="fa fa-comment feed_button" aria-hidden="true">' + data[feed_element]['comments_total'] + '</i>                        <i class="fa fa-share feed_button" aria-hidden="true">' + data[feed_element]['shares_total'] + '</i>                    </div>                </div>                           </div>';
+                    '<div class="feed_project">     <hr>      <h4 class="feed_heading">' + data[feed_element]['title'] + '</h4>     <div class="feed_project_owner_meta">     <img class="feed_user_picture" src=' + data[feed_element][' photo_link '] + '>          <p class="feed_user_activity"> ' + data[feed_element]['full_name'] + ' added this | Mar 18</p>    </div>  <div class="feed_content">    <p class="feed_compressed_desc">' + data[feed_element]['description'] + ' </p>        <div class="feed_buttons" id="button_func" data-footer_element_beta="' + data[feed_element]['project_id'] + '" ' + '>     <i class="fa fa-thumbs-up feed_button button_like ' + bool_liked + '" aria-hidden="true">' + data[feed_element]['likes_total'] + '</i>      <i class="fa fa-comment feed_button" aria-hidden="true">' + data[feed_element]['comments_total'] + '</i>    <i class="fa fa-share feed_button" aria-hidden="true">' + data[feed_element]['shares_total'] + '</i> </div>     </div>      </div>';
                 console.log(data[feed_element]['full_name']);
                 console.log(project_all);
                 feed = document.getElementById('user_feed');
