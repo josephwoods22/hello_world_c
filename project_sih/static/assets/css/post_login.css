@@ -817,16 +817,16 @@ option {
 
 /*-------------UPLOAD FILE FORM -------------------------------*/
 
-#upload_form {
+.upload_form {
     margin: 0 auto;
     padding: 2rem;
 }
 
-#upload_form p {
+.upload_form p {
     color: #fff;
 }
 
-#upload_form input {
+.upload_form input {
     color: #fff;
     font-weight: bold;
     padding: 1rem;
