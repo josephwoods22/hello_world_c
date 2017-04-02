@@ -17,12 +17,7 @@ input:focus {
 <div class="container" id="text_editor" style="display: none;background-color: #fff;">
   <h2>Description</h2>
     <div class="row">
-
-        <form action="." method="post" enctype="multipart/form-data" id="lala">
-            {% csrf_token %} {{ form.as_p }}
-            <input type="submit" value="Upload" />
-        </form>
-        <div class="offset-md-2 col-md-8" d="controls">
+        <div class="offset-md-2 col-md-8" d="controls" style="background-color: white">
             <!-- <div class="offset-md-2 col-md-8" d="controls" style="margin-left: 40px;background-color:#fff;margin-top:40px;"> -->
             <button id="bold" type="button" class="btn toolbar_btn"> <i class="fa fa-bold"></i> </button>
             <button id="italic" type="button" class="btn toolbar_btn"> <i class="fa fa-italic"></i> </button>
